@@ -1,8 +1,4 @@
-
-package test;
-
-
-
+package test; 
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -11,16 +7,11 @@ import main.HangedBoard;
 
 public class TestHangedBoard {
 
-	
-	
-	
-
 	@Test
 
 	public void testAddLetterToWordPlayer(){
 		
 		HangedBoard board = new HangedBoard(); 
-
 		board.startGame("PERRO",2);   
 		int[] results = board.addLetterToWordPlayer('R'); 
 		int[] expected= new int[]{2,3}; 
@@ -28,10 +19,6 @@ public class TestHangedBoard {
 		Assert.assertArrayEquals(expected, results);
 		char[] charExpected = "--RR-".toCharArray();
 		Assert.assertArrayEquals(charExpected, board.getWordPlayer());
-		
-
 	}
-
-
-
 }
+

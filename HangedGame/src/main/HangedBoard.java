@@ -37,25 +37,12 @@ public class HangedBoard {
 	}
 	
 	/**
-	 * Inicia una partida de ahorcado. 
+	 * Inicia una partida de ahorcado. Inici wordSecret y maxFails
 	 * @param secret String con la palabra secreta
 	 * @param maxFails numero maximo de fallos posibles 
 	 */
 	public void startGame(String secret, int maxFails){
-		//TODO complete el metodo 
-		this.maxFails= maxFails;
-		this.wordSecret = secret.toCharArray();
-		this.currentfails =0;
-		this.wordPlayer= new char [wordSecret.length];
-		
-		/* for (char ch: wordPlayer)
-		 * 		ch='-';
-		 */
-		
-		for (int i=0; i<wordPlayer.length; i++){
-			wordPlayer[i]='-';
-		}
-		
+
 	}
 	
 	/**
