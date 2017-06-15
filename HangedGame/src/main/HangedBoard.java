@@ -21,9 +21,11 @@ public class HangedBoard {
 	
 	public HangedBoard(){
 		//TODO complete definicion del contructor 
+		
+		
 	}
 	
-	
+		
 	/**
 	 * Inicia una partida de ahorcado. 
 	 * @param secret arreglo de caracteres con la palabra secreta
@@ -41,6 +43,18 @@ public class HangedBoard {
 	 */
 	public void startGame(String secret, int maxFails){
 		//TODO complete el metodo 
+		this.maxFails= maxFails;
+		this.wordSecret = secret.toCharArray();
+		this.currentfails =0;
+		this.wordPlayer= new char [wordSecret.length];
+		
+		/* for (char ch: wordPlayer)
+		 * 		ch='-';
+		 */
+		
+		for (int i=0; i<wordPlayer.length; i++){
+			wordPlayer[i]='-';
+		}
 		
 	}
 	
@@ -49,12 +63,20 @@ public class HangedBoard {
 	 */
 	public void reset(){
 		//TODO complete el metodo 
+		
+		
 	}
 	
 	
 	public boolean hasLetterInWordSecret(char ch){
-		//TODO complete el metodo 
-		return false;
+		boolean r=false; 
+		for (int i=0; i<wordSecret.length; i++){
+			if (ch==wordSecret[i]){
+				r=true; 
+				break; 
+			}
+        }
+		return r;
 	}
 	
 	public boolean hasLetterInWordPlayer(char ch){
@@ -73,6 +95,8 @@ public class HangedBoard {
 	 * @return si fails==maxFailsla 
 	 */
 	public boolean isGameOver(){
+		
+		
 		return false; 
 	}
 	
@@ -94,9 +118,25 @@ public class HangedBoard {
 			throw new RuntimeException("Error de programacion, wordPlayer ya contiene esta letra."
 					+ " Use el metodo hasLetterInWordPlayer() antes de invicar este metodo");
 		
-		//TODO completar este metodo
-		//TODO desarrollar un Test unitario para este metodo
-		return null; 	
+		if(!hasLetterInWordSecret(ch))
+			return new int[0]; 
+				
+		int[] posicion=new int[wordSecret.length];
+		int k=0;
+		for (int i=0; i<wordSecret.length; i++){
+			char ch2=wordSecret[i];
+			if (ch==ch2){
+				posicion[k]=i;
+				k++;
+			}
+        }
+		int[] posicionfinal= new int[k];
+		for (int i=0; i<k; i++){
+			posicionfinal[i]=posicion[i];
+		}
+		
+		return posicionfinal;
+				
 	}
 
 

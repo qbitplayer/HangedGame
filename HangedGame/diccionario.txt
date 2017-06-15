@@ -1,0 +1,5 @@
+CAMION:Vehiculo
+REFRESCO:Tipo de bebida
+PASTEL:Postre
+MANZANA:Fruta
+PANTALON:Prenda de vestir
