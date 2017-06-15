@@ -26,6 +26,8 @@ public class TestHangedBoard {
 		int[] expected= new int[]{2,3}; 
 
 		Assert.assertArrayEquals(expected, results);
+		char[] charExpected = "--RR-".toCharArray();
+		Assert.assertArrayEquals(charExpected, board.getWordPlayer());
 		
 
 	}

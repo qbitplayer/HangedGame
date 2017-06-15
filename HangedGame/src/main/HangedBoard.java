@@ -130,12 +130,16 @@ public class HangedBoard {
 				k++;
 			}
         }
-		int[] posicionfinal= new int[k];
+		int[] posicionFinal= new int[k];
 		for (int i=0; i<k; i++){
-			posicionfinal[i]=posicion[i];
+			posicionFinal[i]=posicion[i];
 		}
 		
-		return posicionfinal;
+		for (int i=0; i<posicionFinal.length; i++){
+			wordPlayer[posicionFinal[i]]=ch;
+		}
+		
+		return posicionFinal;
 				
 	}
 
